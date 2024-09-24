@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package user;
 
-option go_package = "user.v1;user";
-
 service User {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
   rpc GetUser(GetUserRequest) returns (GetUserResponse) {}
