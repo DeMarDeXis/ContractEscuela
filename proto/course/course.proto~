@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package course;
+
+service Course {
+  rpc CreateCourse(CreateCourseRequest) returns (CreateCourseResponse);
+  rpc GetCourse(GetCourseRequest) returns (GetCourseResponse);
+  rpc UpdateCourse (UpdateCourseRequest) returns (UpdateCourseResponse);
+  rpc DeleteCourse (DeleteCourseRequest) returns (DeleteCourseResponse);
+  rpc AddUserToCourse (AddUserToCourseRequest) returns (AddUserToCourseResponse);
+  rpc RemoveUserFromCourse (RemoveUserFromCourseRequest) returns (RemoveUserFromCourseResponse);
+}
+
+message CreateCourseRequest {
+  string name = 1;
+  string description = 2;
+  string owner_id = 3;
+}
+
+message CreateCourseResponse {
+  string id = 1;
+}
+
+message GetCourseRequest {
+  string id = 1;
+}
+
+message GetCourseResponse {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string owner_id = 4;
+}
+
+message UpdateCourseRequest {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message UpdateCourseResponse {
+  string id = 1;
+  bool success = 2;
+}
+
+message DeleteCourseRequest {
+  
+}
